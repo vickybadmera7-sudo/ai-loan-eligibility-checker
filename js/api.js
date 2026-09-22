@@ -14,7 +14,7 @@
 const LoanWiseAPI = (() => {
   // TODO: replace with your deployed Apps Script Web App URL
   // e.g. "https://script.google.com/macros/s/AKfycb.../exec"
-  const APPS_SCRIPT_URL = "";
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbykznKx7gK-ySDGHcTt6HlM7mEeXE3X6HdE6smkZZxts6FWIWM-lGOM6b_GswFUCQA/exec";
 
   const isConfigured = () => Boolean(APPS_SCRIPT_URL);
 
