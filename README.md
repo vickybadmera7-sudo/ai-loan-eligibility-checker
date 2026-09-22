@@ -2,7 +2,7 @@
 
 An AI-powered BFSI web platform for instant financial decisioning: loan eligibility, credit score analysis, EMI planning, and personalized financial guidance — built as a capstone project for the AI Specialist (BFSI) track.
 
-**Live demo:** _add your deployed Netlify/Vercel URL here_
+**Live demo:** https://6ab25aa8e361861925c7d053--cute-fenglisu-f4734a.netlify.app/loan-eligibility
 
 ## Modules
 
