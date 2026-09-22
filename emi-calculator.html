@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>EMI Calculator — LoanWise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="shell">
+    <a href="index.html" class="brand"><span class="mark"></span>LoanWise</a>
+    <nav class="tools">
+      <a href="loan-eligibility.html">Loan Eligibility</a>
+      <a href="credit-score.html">Credit Score</a>
+      <a href="emi-calculator.html">EMI Calculator</a>
+      <a href="financial-tips.html">Financial Tips</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="shell">
+    <div class="page-head">
+      <div class="kicker">EMI Calculator</div>
+      <h1>Watch the real cost of a loan take shape.</h1>
+      <p>Adjust any field and the EMI, total interest, and year-by-year payoff schedule update immediately.</p>
+    </div>
+
+    <div class="two-col">
+      <form id="emi-form" class="glass card">
+        <div class="field">
+          <label for="principal">Loan amount (₹) — <span id="principal-echo">500000</span></label>
+          <input type="range" id="principal" name="principal" min="50000" max="5000000" step="10000" value="500000">
+        </div>
+
+        <div class="field">
+          <label for="annualRatePct">Annual interest rate (%) — <span id="annualRatePct-echo">10.5</span></label>
+          <input type="range" id="annualRatePct" name="annualRatePct" min="4" max="24" step="0.1" value="10.5">
+        </div>
+
+        <div class="field">
+          <label for="tenureMonths">Tenure (months) — <span id="tenureMonths-echo">60</span></label>
+          <input type="range" id="tenureMonths" name="tenureMonths" min="6" max="360" step="1" value="60">
+        </div>
+
+        <button type="submit" class="btn-primary">Get AI repayment tip</button>
+      </form>
+
+      <aside class="glass card" style="font-size:0.88rem; color:var(--text-secondary);">
+        <h3 style="font-size:1.05rem; margin-bottom:10px;">Reducing-balance formula</h3>
+        <p style="margin-bottom:0; font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-primary);">
+          EMI = P × r × (1+r)ⁿ / ((1+r)ⁿ − 1)
+        </p>
+        <p style="margin-top:10px; margin-bottom:0;">P = principal, r = monthly rate, n = tenure in months. Interest is front-loaded, so early prepayments save the most.</p>
+      </aside>
+    </div>
+
+    <section id="emi-result" class="result-panel glass">
+      <div class="metric-row">
+        <div class="metric"><span id="emi-amount" class="v"></span><span class="l">Monthly EMI</span></div>
+        <div class="metric"><span id="emi-total-payment" class="v"></span><span class="l">Total payment</span></div>
+        <div class="metric"><span id="emi-total-interest" class="v"></span><span class="l">Total interest</span></div>
+      </div>
+
+      <div class="overflow-x" style="margin-top:18px;">
+        <table>
+          <thead><tr><th>Year</th><th>Principal paid</th><th>Interest paid</th><th>Balance left</th></tr></thead>
+          <tbody id="emi-schedule"></tbody>
+        </table>
+      </div>
+
+      <div class="ai-panel">
+        <div class="ai-label"><span class="pulse"></span>Claude AI insight</div>
+        <div id="emi-ai-body" class="ai-body">Adjust the sliders, then click "Get AI repayment tip" for a personalized read.</div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="shell">
+    <span>LoanWise — built as a BFSI capstone project. Estimates only. &copy; <span data-year></span></span>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/emi.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

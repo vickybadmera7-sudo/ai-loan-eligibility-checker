@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>AI Financial Tips — LoanWise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="shell">
+    <a href="index.html" class="brand"><span class="mark"></span>LoanWise</a>
+    <nav class="tools">
+      <a href="loan-eligibility.html">Loan Eligibility</a>
+      <a href="credit-score.html">Credit Score</a>
+      <a href="emi-calculator.html">EMI Calculator</a>
+      <a href="financial-tips.html">Financial Tips</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="shell">
+    <div class="page-head">
+      <div class="kicker">AI Financial Tips</div>
+      <h1>Guidance built from your actual numbers.</h1>
+      <p>A short profile — income, expenses, debt, savings, and a goal — turned into specific, prioritized suggestions instead of generic advice.</p>
+    </div>
+
+    <div class="two-col">
+      <form id="tips-form" class="glass card">
+        <div class="form-grid">
+          <div class="field">
+            <label for="monthlyIncome">Monthly income (₹)</label>
+            <input type="number" id="monthlyIncome" name="monthlyIncome" min="0" value="55000" required>
+          </div>
+          <div class="field">
+            <label for="monthlyExpenses">Monthly expenses (₹)</label>
+            <input type="number" id="monthlyExpenses" name="monthlyExpenses" min="0" value="32000" required>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="monthlyDebtPayments">Monthly debt payments (₹)</label>
+            <input type="number" id="monthlyDebtPayments" name="monthlyDebtPayments" min="0" value="6000">
+          </div>
+          <div class="field">
+            <label for="currentSavings">Current savings balance (₹)</label>
+            <input type="number" id="currentSavings" name="currentSavings" min="0" value="80000">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="goalAmount">Savings goal, optional (₹)</label>
+          <input type="number" id="goalAmount" name="goalAmount" min="0" value="300000">
+        </div>
+
+        <button type="submit" class="btn-primary">Get my tips</button>
+      </form>
+
+      <aside class="glass card" style="font-size:0.88rem; color:var(--text-secondary);">
+        <h3 style="font-size:1.05rem; margin-bottom:10px;">What this looks at</h3>
+        <p style="margin-bottom:0;">Savings rate, emergency fund coverage in months, debt-to-income ratio, and — if you set a goal — how long it'll take at your current pace.</p>
+      </aside>
+    </div>
+
+    <section id="tips-result" class="result-panel glass">
+      <h3 style="font-size:1.1rem; margin-bottom:16px;">Your priorities, in order</h3>
+      <div id="tips-grid" class="tips-grid"></div>
+
+      <div class="ai-panel">
+        <div class="ai-label"><span class="pulse"></span>Claude AI insight</div>
+        <div id="tips-ai-body" class="ai-body"></div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="shell">
+    <span>LoanWise — built as a BFSI capstone project. General guidance, not personalized financial advice. &copy; <span data-year></span></span>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/tips.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Loan Eligibility Checker — LoanWise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="shell">
+    <a href="index.html" class="brand"><span class="mark"></span>LoanWise</a>
+    <nav class="tools">
+      <a href="loan-eligibility.html">Loan Eligibility</a>
+      <a href="credit-score.html">Credit Score</a>
+      <a href="emi-calculator.html">EMI Calculator</a>
+      <a href="financial-tips.html">Financial Tips</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="shell">
+    <div class="page-head">
+      <div class="kicker">Loan Eligibility Checker</div>
+      <h1>Check where you stand before you apply.</h1>
+      <p>This runs your details through the same kind of FOIR and credit-band rules a lender applies, so you see a realistic verdict — not a guess.</p>
+    </div>
+
+    <div class="two-col">
+      <form id="loan-form" class="glass card">
+        <div class="form-grid">
+          <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="18" max="80" value="29" required>
+          </div>
+          <div class="field">
+            <label for="employmentType">Employment type</label>
+            <select id="employmentType" name="employmentType">
+              <option value="salaried">Salaried</option>
+              <option value="self-employed">Self-employed</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="monthlyIncome">Monthly income (₹)</label>
+            <input type="number" id="monthlyIncome" name="monthlyIncome" min="0" value="55000" required>
+          </div>
+          <div class="field">
+            <label for="existingEMIs">Existing monthly EMIs (₹)</label>
+            <input type="number" id="existingEMIs" name="existingEMIs" min="0" value="6000">
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="requestedAmount">Requested loan amount (₹)</label>
+            <input type="number" id="requestedAmount" name="requestedAmount" min="0" value="500000" required>
+          </div>
+          <div class="field">
+            <label for="tenureMonths">Tenure (months)</label>
+            <input type="number" id="tenureMonths" name="tenureMonths" min="6" max="360" value="60" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="creditScore">Credit score (300–900)</label>
+          <input type="number" id="creditScore" name="creditScore" min="300" max="900" value="720" required>
+          <div class="hint">Don't know it exactly? Use the Credit Score Analyzer first.</div>
+        </div>
+
+        <button type="submit" class="btn-primary">Check eligibility</button>
+      </form>
+
+      <aside class="glass card" style="font-size:0.88rem; color:var(--text-secondary);">
+        <h3 style="font-size:1.05rem; margin-bottom:10px;">How this is scored</h3>
+        <p style="margin-bottom:10px;">Four checks run against your inputs: age range, minimum income, obligation-to-income ratio (FOIR), and credit score band. All four need to clear for a straightforward pass.</p>
+        <p style="margin-bottom:0;">Nothing here is transmitted to a lender — it's a local estimate to help you prepare.</p>
+      </aside>
+    </div>
+
+    <section id="loan-result" class="result-panel glass">
+      <span id="loan-verdict" class="verdict"></span>
+
+      <div class="metric-row">
+        <div class="metric"><span id="loan-emi" class="v"></span><span class="l">Proposed EMI</span></div>
+        <div class="metric"><span id="loan-foir" class="v"></span><span class="l">FOIR (obligation ratio)</span></div>
+        <div class="metric"><span id="loan-max" class="v"></span><span class="l">Your borrowing ceiling</span></div>
+      </div>
+
+      <ul id="loan-reasons" class="reasons"></ul>
+
+      <div class="ai-panel">
+        <div class="ai-label"><span class="pulse"></span>Claude AI insight</div>
+        <div id="loan-ai-body" class="ai-body"></div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="shell">
+    <span>LoanWise — built as a BFSI capstone project. Estimates only, not a lending decision. &copy; <span data-year></span></span>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/loan.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
