@@ -3,6 +3,7 @@
 An AI-powered BFSI web platform for instant financial decisioning: loan eligibility, credit score analysis, EMI planning, and personalized financial guidance — built as a capstone project for the AI Specialist (BFSI) track.
 
 **Live demo:** https://6ab25aa8e361861925c7d053--cute-fenglisu-f4734a.netlify.app/loan-eligibility
+**Full documentation:** [LoanWise_Documentation_VickyBadmera.docx](./LoanWise_Documentation_VickyBadmera.docx)
 
 > Claude API integration is fully implemented (`apps-script/Code.gs` → `handleAIInsight`) and functional pending an API key — all four tools currently run on verified rule-based/formula-based logic with local AI-insight fallbacks.
 
