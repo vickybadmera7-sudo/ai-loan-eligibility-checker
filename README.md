@@ -6,6 +6,7 @@ An AI-powered BFSI web platform for instant financial decisioning: loan eligibil
 
 > Claude API integration is fully implemented (`apps-script/Code.gs` → `handleAIInsight`) and functional pending an API key — all four tools currently run on verified rule-based/formula-based logic with local AI-insight fallbacks.
 
+
 ## Modules
 
 | Module | What it does |
